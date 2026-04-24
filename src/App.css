@@ -1,13 +1,16 @@
 .app-container {
   max-width: 500px;
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
+  /* Fallback */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0;
+  /* Padding will be handled internally by steps */
   background-color: #FFFFFF;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 

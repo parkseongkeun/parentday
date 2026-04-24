@@ -131,14 +131,14 @@ const App: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
+            style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100dvh' }}
           >
             <div style={{ paddingTop: '20px', paddingLeft: '24px', paddingBottom: '32px', textAlign: 'left' }}>
               <h1 style={{ marginBottom: '8px', fontSize: '22px', fontWeight: '700', lineHeight: '1.4' }}>용돈 뽑기</h1>
               <p style={{ fontSize: '17px', color: '#6B7684' }}>행운을 뽑아주세요</p>
             </div>
 
-            <div style={{ padding: '0 24px' }}>
+            <div style={{ padding: '0 20px' }}>
               <TDSRadioGroup
                 options={[
                   { label: '엄마', value: '엄마', icon: '/assets/woman.png' },
@@ -164,7 +164,7 @@ const App: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
+            style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', height: '100dvh' }}
           >
             <div style={{ paddingTop: '20px', paddingLeft: '24px', width: '100%' }}>
               <h2 style={{ fontSize: '22px', fontWeight: '700', lineHeight: '1.4', margin: 0 }}>
@@ -230,7 +230,7 @@ const App: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', paddingBottom: '20px' }}
+            style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100dvh', paddingBottom: '24px' }}
           >
             {!result ? (
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
