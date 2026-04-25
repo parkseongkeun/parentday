@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DotLottiePlayer } from '@dotlottie/react-player';
 import { TDSButton } from './components/TDSButton';
 import { TDSRadioGroup } from './components/TDSRadioGroup';
 import { TDSToast } from './components/TDSToast';
@@ -7,10 +8,10 @@ import { TDSSkeleton } from './components/TDSSkeleton';
 import { TDSNumberCounter } from './components/TDSNumberCounter';
 import './App.css';
 
-type Step = 'SELECT' | 'DRAG' | 'RESULT';
+type Step = 'INTRO' | 'SELECT' | 'DRAG' | 'RESULT';
 
 const App: React.FC = () => {
-  const [step, setStep] = useState<Step>('SELECT');
+  const [step, setStep] = useState<Step>('INTRO');
   const [isLoading, setIsLoading] = useState(false);
   const [target, setTarget] = useState('');
   const [result, setResult] = useState<number | null>(null);
@@ -104,6 +105,34 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       <AnimatePresence mode="wait">
+        {step === 'INTRO' && (
+          <motion.div
+            key="intro"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100dvh' }}
+          >
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+              <div style={{ width: '280px', height: '280px' }}>
+                <DotLottiePlayer
+                  src="/intro.lottie"
+                  autoplay
+                  loop={false}
+                />
+              </div>
+              <h1 style={{ marginTop: '32px', fontSize: '24px', fontWeight: '700', color: '#191F28', textAlign: 'center' }}>
+                어버이날 깜짝 선물<br />용돈 뽑기 이벤트
+              </h1>
+            </div>
+            <div style={{ padding: '24px', width: '100%' }}>
+              <TDSButton onClick={() => setStep('SELECT')}>
+                시작하기
+              </TDSButton>
+            </div>
+          </motion.div>
+        )}
+
         {isLoading && (
           <motion.div
             key="skeleton"
