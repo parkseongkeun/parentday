@@ -139,7 +139,7 @@ const App: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{ flex: 1, padding: '20px 24px' }}
+            style={{ flex: 1, padding: '20px 24px', height: '100dvh', display: 'flex', flexDirection: 'column' }}
           >
             <div style={{ marginBottom: '60px' }}>
               <TDSSkeleton width="180px" height="32px" borderRadius="10px" />
